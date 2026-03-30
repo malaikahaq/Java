@@ -2,6 +2,12 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Hello {
+
+    public static void printList(ArrayList <String> list){
+        for (String value: list){
+            System.out.println(value);
+        }
+    }
     public static void main(String[] args){
         ArrayList<String> fruitNames = new ArrayList<>();
                     Scanner scanner = new Scanner(System.in);
@@ -13,17 +19,6 @@ public class Hello {
             String fruitName = scanner.nextLine();
             fruitNames.add(fruitName);
         }
-        for(int i=0; i< fruitNames.size(); i++){
-            System.out.println(fruitNames.get(i));
-        }
-        System.out.println("enter the name of fruit you want to find: ");
-        String search = scanner.nextLine();
-        boolean found = fruitNames.contains(search);
-        if (found){
-            System.out.println(search + " was found!");
-        }
-        else{
-            System.out.println("not found :(");
-        }
+        printList(fruitNames);
     }
 }
